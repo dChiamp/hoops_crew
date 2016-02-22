@@ -1,0 +1,17 @@
+<h1>Hoops Crew Playas</h1>
+
+<div>
+There are currently <%= @users.length %> players signed up
+</div>
+
+<% @users.each do |user| %>
+  <div>
+      Name: <%= user.name %>
+      origin: <%= user.origin %>
+      'hood: <%= user.neighborhood %>
+      <%= link_to "Show user", user_path(user) %>
+     <!-- add link to edit: , '/users/<%user.id%>/edit -->
+     <%= link_to "Edit user", edit_user_path(user) %>
+  </div>
+   <br>
+<%end%>

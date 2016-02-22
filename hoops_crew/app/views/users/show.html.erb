@@ -1,0 +1,14 @@
+Player Profile
+  <div>
+    <h1>  <%= @user.name %> </h1> 
+    <div> Prof Pic: <%= @user.pic %> </div>
+    <div> Origin: <%= @user.origin %> </div>
+    <div> Hood: <%= @user.neighborhood %> 
+    <div> Bio: <%= @user.bio %> </div>
+    <div> Email: <%= @user.email %> </div>
+  </div>
+
+  <br>
+
+  <%= link_to "Edit user", edit_user_path(@user) %>
+  <%= button_to "Delete user", @user, method: :delete %>

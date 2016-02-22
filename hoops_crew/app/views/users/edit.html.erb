@@ -1,0 +1,26 @@
+Edit Your Profile
+
+<%= form_for @user do |f| %>
+  <div>
+    <%= f.text_field :name, placeholder: "Name" %>
+  </div>
+  <div>
+    <%= f.text_field :origin, placeholder: "Origin" %>
+  </div>
+  <div>
+    <%= f.text_field :pic, placeholder: "Pic" %>
+  </div>
+  <div>
+    <%= f.text_field :neighborhood, placeholder: "Neighborhood" %>
+  </div>
+  <div>
+    <%= f.text_field :bio, placeholder: "Bio" %>
+  </div>
+  <div>
+    <%= f.text_field :email, placeholder: "Email" %>
+  </div>
+  <div>
+    <%= f.text_field :password, placeholder: "password" %>
+  </div>
+  <%= f.submit "Update" %>
+<% end %> 

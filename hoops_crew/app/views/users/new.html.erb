@@ -1,0 +1,26 @@
+Sign Up For Hoops Crew!
+
+<%= form_for @user do |f| %>
+  <div>
+    <%= f.text_field :name, placeholder: "Name" %>
+  </div>
+  <div>
+    <%= f.text_field :origin, placeholder: "Origin" %>
+  </div>
+  <div>
+    <%= f.text_field :pic, placeholder: "Pic" %>
+  </div>
+    <div>
+    <%= f.text_field :neighborhood, placeholder: "neighborhood" %>
+  </div>
+    <div>
+    <%= f.text_field :bio, placeholder: "Bio" %>
+  </div>
+    <div>
+    <%= f.text_field :email, placeholder: "Email" %>
+  </div>
+  <div>
+    <%= f.password_field :password, placeholder: "Password" %>
+  </div>
+  <%= f.submit "Sign Up" %>
+<% end %> 
