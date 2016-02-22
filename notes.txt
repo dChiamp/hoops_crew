@@ -1,0 +1,4 @@
+notes:
+
+add to user profile, only able to delete when logged in
+<%= button_to "Delete user", user, method: :delete %>
