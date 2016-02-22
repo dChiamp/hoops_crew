@@ -17,6 +17,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
+    redirect_to "/users/#{@user.id}"
     # login(@user)
   end
 
