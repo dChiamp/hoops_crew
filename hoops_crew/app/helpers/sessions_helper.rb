@@ -10,7 +10,7 @@ module SessionsHelper
 
   def logged_in?
     if current_user == nil
-      redirect_to new_user
+      redirect_to "/"
     end
   end
 
@@ -23,9 +23,7 @@ module SessionsHelper
     @current_user = nil
   end
 
-  def authorize
-    if @current_user == User.find(params[:id])
-      @right_person = true
-    end
+  def authorize?
+    return current_user == User.find(params[:id])
   end
 end

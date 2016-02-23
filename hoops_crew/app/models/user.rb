@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   has_secure_password
 
   # validations
-  validates :name, :email, :password_digest, presence: true
+  validates :name, :email, :password, presence: true
 
 
   def self.confirm(params)

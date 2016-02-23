@@ -28,8 +28,8 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    authorize
-      if @right_person
+    if authorize?
+      # if @right_person
         render :edit
       else 
         redirect_to "/"

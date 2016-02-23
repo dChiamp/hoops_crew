@@ -1,19 +1,20 @@
 Player Profile
-  <div>
-    <h1>  <%= @user.name %> </h1> 
-    <div> Prof Pic: <%= @user.pic %> </div>
-    <div> Origin: <%= @user.origin %> </div>
-    <div> Hood: <%= @user.neighborhood %> 
-    <div> Bio: <%= @user.bio %> </div>
-    <div> Email: <%= @user.email %> </div>
-  </div>
+<div>
+  <h1>  <%= @user.name %> </h1> 
+  <div> Prof Pic: <%= @user.pic %> </div>
+  <div> Origin: <%= @user.origin %> </div>
+  <div> Hood: <%= @user.neighborhood %> 
+  <div> Bio: <%= @user.bio %> </div>
+  <div> Email: <%= @user.email %> </div>
+</div>
 
-  <br>
-<% if current_user %>
+<br>
+
+<% if authorize? %>
   <%= link_to "Edit user", edit_user_path(@user) %>
   <%= button_to "Delete user", @user, method: :delete %>
-  <%= link_to "see all playas", "/users" %>
   <%= link_to "logout", logout_user_path(@user) %>
-
+  <%= link_to "see all playas", "/users" %>
+<%else%>
+  <%= link_to "see all playas", "/users" %>
 <% end %>
-

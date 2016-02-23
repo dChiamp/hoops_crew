@@ -1,0 +1,19 @@
+<h1>All Messages</h1>
+
+<table id="messages">
+
+  <tbody>
+    <% @messages.each do |message| %>
+      <tr>
+        <td class="content"><%= message.content %></td>
+        <td><%= link_to 'Show', "/messages" %></td>
+        <td><%= link_to 'Edit', "/messages/#{:id}/edit" %></td>
+        <td><%= link_to 'Destroy', delete_message_path, method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New message', new_message_path %>

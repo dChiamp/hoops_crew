@@ -2,9 +2,11 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   # pending "add some examples to (or delete) #{__FILE__}"
-  let (:user) {User.create({name: "foo"}) }
+  let (:user) {User.create({name: "foo", email: "d@c.com"}) }
+  
   it "is invalid without password" do 
-    expect(user.password_digest?).to be true
+    p user.password
+    expect(user.valid?).to be false
   end
 
   it "is invalid without name" do 
@@ -19,5 +21,12 @@ RSpec.describe User, type: :model do
   #   expect(user.email).to be unique
   # end
 
+  let (:correct_user) {User.create({name: "foo", password: "123", email: "d@c.com"}) }
 
+  it "is valid with password" do 
+    p user.password
+    expect(correct_user.valid?).to be true
+  end
+
+  #
 end
