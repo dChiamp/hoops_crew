@@ -21,6 +21,10 @@ Rails.application.routes.draw do
   put "/users/:id", to: "users#update"
   # delete
   delete '/users/:id', to: 'users#destroy', as: "delete_user"
+    
+  #events
+  get "/events", to: "events#index", as: "events"
+
   #sessions
   get "/user/sign_in", to: "sessions#new", as: "sign_in"
 
