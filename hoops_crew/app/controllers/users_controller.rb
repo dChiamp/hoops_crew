@@ -28,7 +28,13 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    render :edit
+    authorize
+      if @right_person
+        render :edit
+      else 
+        redirect_to "/"
+      end
+    # render :edit
   end
 
   def update

@@ -8,10 +8,18 @@ class SessionsController < ApplicationController
     @user = User.confirm(login_params)
     if @user 
       login(@user)
-      redirect_to "/users/#{@user.id}"
+      flash.alert = "logged in!"
+      redirect_to @user
     else 
-      redirect_to sign_up
+      flash[:notice] = "somethings wrong, create an account"
+      render :new
     end
+  end
+
+  def destroy
+    log_out
+     flash[:notice] = "You have successfully logged out."
+    redirect_to "/"
   end
 
   private 

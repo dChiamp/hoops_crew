@@ -9,7 +9,11 @@ Player Profile
   </div>
 
   <br>
-
+<% if current_user %>
   <%= link_to "Edit user", edit_user_path(@user) %>
   <%= button_to "Delete user", @user, method: :delete %>
   <%= link_to "see all playas", "/users" %>
+  <%= link_to "logout", logout_user_path(@user) %>
+
+<% end %>
+

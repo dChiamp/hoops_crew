@@ -26,8 +26,10 @@ Rails.application.routes.draw do
   get "/events", to: "events#index", as: "events"
 
   #sessions
-  get "/user/sign_in", to: "sessions#new", as: "sign_in"
+  get "/signin", to: "sessions#new", as: "sign_in"
 
   post "/sessions", to: "sessions#create"
+
+  delete "/sessions", to: "sessions#destroy", as: "logout_user"
 
 end
