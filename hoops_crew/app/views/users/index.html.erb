@@ -4,13 +4,13 @@
 <h3> There are currently <%= @users.length %> players signed up </h3>
 </div>
 <br>
+
 <% @users.each do |user| %>
   <div>
-      Name: <%= user.name %>
-      origin: <%= user.origin %>
-      'hood: <%= user.neighborhood %>
-      <%= link_to "Show user", user_path(user) %>
-     <!-- add link to edit: , '/users/<%user.id%>/edit -->
+    Name: <%= user.name %>
+    origin: <%= user.origin %>
+    'hood: <%= user.neighborhood %>
+    <%= link_to "Show user", user_path(user) %>
   </div>
-   <br>
+  <br>
 <%end%>

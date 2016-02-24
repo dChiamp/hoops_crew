@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
   end
 
   def show
-    @message = Message.find(params[:id])
+    @message = Message.find(params[:message_id])
     render :show
   end
 
@@ -18,16 +18,16 @@ class MessagesController < ApplicationController
     @message = Message.create(message_params)
     if @message 
       # login(@user)
-      # flash.alert = "message posted!"
+      flash[:notice] = "message posted!"
       redirect_to "/messages"
     else 
-      # flash[:notice] = "somethings wrong"
+      flash[:notice] = "somethings wrong"
       redirect_to "/events"
     end
   end
 
   def edit
-    @message = Message.find(params[:id])
+    @message = Message.find(params[:message_id])
      render :edit
     # if authorize?
     #   # if @right_person
@@ -38,20 +38,20 @@ class MessagesController < ApplicationController
   end
 
   def update
-    @message = Message.find(params[:id])
+    @message = Message.find(params[:message_id])
     # update the user
     @message.update_attributes(message_params)
     redirect_to "/events"
   end
 
   def destroy
-    Message.destroy(params[:id])
+    Message.destroy(params[:message_id])
   end
 
   private
   def message_params
     #must this be full validation params??
-    params.require(:message).permit(:content)
+    params.require(:message).permit(:content, :user_id)
   end
 
 end

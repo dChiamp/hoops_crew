@@ -1,12 +1,12 @@
 <h1>All Messages</h1>
 
 <table id="messages">
-
   <tbody>
     <% @messages.each do |message| %>
       <tr>
         <td class="content"><%= message.content %></td>
-        <td><%= link_to 'Show', "/messages/#{:id}" %></td>
+        <!-- broke ass link -->
+        <td><%= link_to 'Show', "#{current_user.id}/messages/#{message.id}" %></td>
       </tr>
     <% end %>
   </tbody>

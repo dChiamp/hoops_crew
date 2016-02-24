@@ -22,12 +22,12 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
     render :show
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
     if authorize?
       # if @right_person
         render :edit
@@ -38,14 +38,14 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
     # update the user
     @user.update_attributes(user_params)
     redirect_to "/users/#{@user.id}"
   end
 
   def destroy
-    User.destroy(params[:id])
+    User.destroy(params[:user_id])
     redirect_to "/"
   end
 

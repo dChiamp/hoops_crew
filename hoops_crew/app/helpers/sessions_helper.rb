@@ -24,6 +24,6 @@ module SessionsHelper
   end
 
   def authorize?
-    return current_user == User.find(params[:id])
+    return current_user == User.find(params[:user_id])
   end
 end
