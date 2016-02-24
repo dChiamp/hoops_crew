@@ -2,6 +2,8 @@
   <div class="field">
     <%= f.label :content %><br>
     <%= f.text_field :content %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+     <!-- follow for pic etc -->
   </div>
   <div class="actions">
     <%= f.submit %>

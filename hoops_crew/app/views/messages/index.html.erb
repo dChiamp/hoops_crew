@@ -6,9 +6,7 @@
     <% @messages.each do |message| %>
       <tr>
         <td class="content"><%= message.content %></td>
-        <td><%= link_to 'Show', "/messages" %></td>
-        <td><%= link_to 'Edit', "/messages/#{:id}/edit" %></td>
-        <td><%= link_to 'Destroy', delete_message_path, method: :delete %></td>
+        <td><%= link_to 'Show', "/messages/#{:id}" %></td>
       </tr>
     <% end %>
   </tbody>

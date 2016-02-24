@@ -2,7 +2,8 @@
   <ul>
     <li> <a href="/"> Home </a> </li>
     <li> <a href="/events"> Vote </a> </li>
-    <li> <%= link_to "profile", "/users/", method: "get" %> </li>
+    <li> <%= link_to "Profile", "/users/#{current_user.id}", method: "get" %> </li>
     <li> <a href="/users"> Roster </a> </li>
+    <li> <%= link_to "message board", "/users/#{@current_user.id}/messages", method: "get" %> </li>
   </ul>
 </header>
