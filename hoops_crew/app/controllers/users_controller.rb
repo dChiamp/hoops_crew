@@ -9,7 +9,6 @@ class UsersController < ApplicationController
     render :index
   end
 
-
   def new
     @user = User.new
     render :new
@@ -17,6 +16,10 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
+
+    # test mail
+    ApplicationMailer.final_date_email(@user).deliver!
+
     redirect_to "/users/#{@user.id}"
     # login(@user)
   end
