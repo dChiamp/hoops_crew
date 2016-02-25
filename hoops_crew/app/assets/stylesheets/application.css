@@ -10,7 +10,11 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
+ *= require weather-icons.min.css
  *= require_self
- *= require_navbar.html.erb
+ *= require_tree .
  */
+ 
+@import "bootstrap-sprockets";
+@import "bootstrap";
+

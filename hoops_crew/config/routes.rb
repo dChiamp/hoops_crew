@@ -26,8 +26,10 @@ Rails.application.routes.draw do
   get "/users/:user_id/events/new", to: "events#new", as: "new_event"
   post "/users/:user_id/events", to: "events#create"
   #show all vote details (render scores)
-  # what the fucking fuck is wrong with this??
-  # get "/users/:user_id/events/:event_id", "events#show", as: "event"
+  post "/users/:user_id/events/:event_id", to: "events#vote", as: "vote"
+  # post "/users/:user_id/events/:event_id", to: "events#sun_vote", as: "sun_vote"
+
+  get "/users/:user_id/events/:event_id", to: "events#show", as: "event"
   # create event done by vote logic, just need tp edit/update
   # edit event. 
   get "/users/:user_id/events/:event_id/edit", to: "events#edit", as: "edit_event"

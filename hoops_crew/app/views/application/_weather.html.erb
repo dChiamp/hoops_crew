@@ -1,3 +1,8 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="app/vendor/assets/stylesheets/weather-icons.min.css">
+  
+</head>
+<body>
 <br>
 <h1> Vote on What day we Ball </h1>
 <h3> Weekend Forcast </h3>
@@ -17,17 +22,29 @@
   </div>
 </div>
 
+
 <div id="scoreboard">
-  <h3> Saturday Votes:</h3>
-  <p id="sat-vote-score"> 0 </p>
-  <button id="sat-vote-btn"> Vote For Sat </button>
-  <h3> Sunday Votes:</h3>
-  <p id="sun-vote-score"> 0  </p>
-  <button id="sun-vote-btn"> Vote For Sun </button>
-</div>
+<h2>For weekend of</h2>
+
+
+  <%= @event.weekend_date %>
+    <h3> Saturday Votes:</h3>
+     <%= @event.sat_votes %>
+<% if current_user.voted == nil %>
+    <%= button_to "sat vote", {:url => update_event_path, :controller => "events", :action => "vote", :event_id => @event.id, :vote_day => "sat", :method => :post} %>
+<% end %>
+    <h3> Sunday Votes:</h3>
+    <%= @event.sun_votes %>
+    <!-- copy current user logic from above -->
+<% if current_user.voted == nil %>
+    <%= button_to "sun vote", {:url => update_event_path, :controller => "events", :action => "vote", :event_id => @event.id, :vote_day => "sun", :method => :post} %>
+<% end %>
+  </div>
+  
 
 <br>
 
+
 </body>
-<script type="text/javascript" src="base.js"></script>
+
 </html>

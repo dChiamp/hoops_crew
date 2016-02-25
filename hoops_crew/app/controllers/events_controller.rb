@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   #update vote counts, so basically full routes
   # going to need helper methods for vote logic 
   def index
-    @votes = Event.all
+    @events = Event.all
     # render "/users/:user_id/events"
     render :index
   end
@@ -21,18 +21,18 @@ class EventsController < ApplicationController
 #that to +1 in db
 
   def show
-    @vote = Event.find(params[:event_id])
+    @event = Event.find(params[:event_id])
     # render "users/:user_id/events/:event_id"
     render :show
   end
 
   def new
-    @vote = Event.new
+    @event = Event.new
   end
 
   def create
-    @vote = Event.create(params[event_params])
-    if @vote 
+    @event = Event.create(params[event_params])
+    if @event 
       flash[:notice] = "Your vote has been cast"
     else 
       flash[:notice] = "Something went wrong :( "
@@ -40,18 +40,57 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @vote = Event.find(params[:event_id])
+    @event = Event.find(params[:event_id])
   end
 
   def update 
-    @vote = Event.find(:event_id)
-    @vote.update_attributes(event_params)
+    @event = Event.find(params[:event_id])
+    @event.update_attributes(event_params)
     # if @saturday
-    #   @vote.update_attributes(:sat_vote, @vote.sat_vote + 1)
+    #   @vote.update_attributes(:sat_votes, @vote.sat_vote + 1)
     # elsif @sunday
-    #   vote.update_attributes(:sun_vote, @vote.sun_vote + 1)
+    #   vote.update_attributes(:sun_votes, @vote.sun_vote + 1)
     # end
   end
+
+
+  def sat_vote
+    p "got to sat vote!"
+    @user = User.find(params[:user_id])
+    @event = Event.find(params[:event_id])
+    @event.update_attribute(:sat_votes, @event.sat_votes + 1)
+    @user.update_attribute(:voted, @user.voted = true)
+    render :show
+    flash[:notice] = "Your vote has been cast! NO take-backsies"
+  end
+
+  def sun_vote
+    p "got to sun vote"
+    @user = User.find(params[:user_id])
+    @event = Event.find(params[:event_id])
+    @event.update_attribute(:sun_votes, @event.sun_votes + 1)
+    @user.update_attribute(:voted, @user.voted = true)
+    render :show
+    flash[:notice] = "Your vote has been cast! NO take-backsies"
+  end
+
+  def vote
+    p params
+    @user = User.find(params[:user_id])
+    @event = Event.find(params[:event_id])
+    if params[:vote_day] == "sat"
+      @event.update_attribute(:sat_votes, @event.sat_votes + 1)
+      @user.update_attribute(:voted, @user.voted = true)
+    elsif params[:vote_day] == "sun"
+      @event.update_attribute(:sun_votes, @event.sun_votes + 1)
+      @user.update_attribute(:voted, @user.voted = true)
+    end
+    render :show
+    flash[:notice] = "Your vote has been cast! NO take-backsies"
+  end
+
+
+
 
   def destroy
     Event.destroy(params[:event_id])

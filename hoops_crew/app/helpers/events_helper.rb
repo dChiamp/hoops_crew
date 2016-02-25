@@ -13,7 +13,10 @@ module EventsHelper
     # else 
     # create new Event
     # 
-
   # def Vote
   # end
+    def p_time
+
+      p "hello from EventsHelper"
+    end
 end
