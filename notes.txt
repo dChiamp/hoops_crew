@@ -2,3 +2,22 @@ notes:
 
 add to user profile, only able to delete when logged in
 <%= button_to "Delete user", user, method: :delete %>
+
+
+in users/11/messages/5/  show full msg
+<% if authorize? %>
+  <%= link_to 'Edit', edit_message_path(@message) %> 
+  <%= button_to "Delete user", @message, method: :delete %>
+  <%= link_to 'Back', messages_path %>
+<%else%>
+  <%= link_to 'Back', messages_path %>
+<% end %>
+
+
+link in message form
+
+"#{current_user.id}/messages/#{message.id}" 
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
