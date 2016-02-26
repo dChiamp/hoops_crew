@@ -8,7 +8,7 @@ Use the Hoops Crew APP to coordinate your weekly basketball meetup.
 Navigate to hoopscrew.org on your mobile device or pc to begin
 plannning your meetup.
 
-**Check the weekend forcast and vote on what day you want to play.
+*Check the weekend forcast and vote on what day you want to play.
 
 Leave messages to help plan and socialize with your friends.
 
