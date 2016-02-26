@@ -11,14 +11,14 @@
 <br>
 
 <div>
-  <% if authorize? %>
-    <%= button_to "see all playas", users_path, method: :get, class: "btn btn-secondary btn-sm"%>
-    <%= button_to "Edit user", edit_user_path(@user), method: :get, class: "btn btn-secondary btn-sm" %>
-    <%= button_to "Delete user", @user, method: :delete, class: "btn btn-danger btn-sm" %>
-    <%= button_to "logout", logout_user_path(@user), method: :delete, class: "btn btn-secondary btn-sm" %>
-  <%else%>
-    <%= link_to "see all playas", "/users" %>
-  <% end %>
+    <% if authorize? %>
+      <%= button_to "see all playas", users_path, method: :get, class: "prof-btns btn btn-secondary btn-sm "%>
+      <%= button_to "Edit user", edit_user_path(@user), method: :get, class: "prof-btns btn btn-secondary btn-sm" %>
+      <%= button_to "Delete user", @user, method: :delete, class: "prof-btns btn btn-danger btn-sm" %>
+      <%= button_to "logout", logout_user_path(@user), method: :delete, class: "prof-btns btn btn-secondary btn-sm" %>
+    <%else%>
+      <%= link_to "see all playas", "/users" %>
+    <% end %>
 </div>
 
 <br>

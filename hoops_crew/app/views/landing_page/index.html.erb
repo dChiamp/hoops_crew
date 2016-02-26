@@ -7,8 +7,8 @@
   <% if current_user %>
     <%= button_to "logout", logout_user_path, method: :delete, class: "btn btn-danger" %>
   <%else%>
-    <%= button_to "sign up", new_user_path, method: :get, class: "btn btn-secondary btn-lg sign-up"%>
-    <%= button_to "sign in", sign_in_path, method: :get, class: "btn btn-secondary btn-lg sign-in" %>
+    <%= button_to "sign up", new_user_path, method: :get, class: "login-btns btn btn-secondary btn-lg sign-up"%>
+    <%= button_to "sign in", sign_in_path, method: :get, class: "login-btns btn btn-secondary btn-lg sign-in" %>
   <%end%>
 </div>
 
