@@ -1,0 +1,31 @@
+<h1> Player Profile </h1>
+<div class="player-profile col-md-3 col-centered" >
+  <h1>  <%= @user.name %> </h1> 
+  <div> Prof Pic: <%= @user.pic %> </div>
+  <div> Origin: <%= @user.origin %> </div>
+  <div> Hood: <%= @user.neighborhood %> </div>
+  <div> Bio: <%= @user.bio %> </div>
+  <div> Email: <%= @user.email %> </div>
+</div>
+
+<br>
+
+<div>
+    <% if authorize? %>
+      <%= button_to "see all playas", users_path, method: :get, class: "prof-btns btn btn-secondary btn-sm "%>
+      <%= button_to "Edit user", edit_user_path(@user), method: :get, class: "prof-btns btn btn-secondary btn-sm" %>
+      <%= button_to "Delete user", @user, method: :delete, class: "prof-btns btn btn-danger btn-sm" %>
+      <%= button_to "logout", logout_user_path(@user), method: :delete, class: "prof-btns btn btn-secondary btn-sm" %>
+    <%else%>
+      <%= link_to "see all playas", "/users" %>
+    <% end %>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

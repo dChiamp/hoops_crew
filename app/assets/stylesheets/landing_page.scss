@@ -1,0 +1,29 @@
+// Place all the styles related to the landing_page controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  // background: url('app/assests/images/court.png');
+  background-color: white;
+  text-align: center;  
+  // background-image: url("logo.jpg");
+  background-size: cover;
+
+}
+
+
+.login-btns {
+  background-color: #FFC284;
+  margin: 2%;
+  // height: 5%;
+  width: 300px;
+  
+}
+
+.login-btns:hover {
+  background-color: lightgreen;
+}
+
+
+
+

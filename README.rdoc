@@ -1,0 +1,13 @@
+== README
+
+* Ruby version
+  -'4.2.5.1'
+
+
+*  Test suite
+  -rspec
+
+
+* Services
+  -Open Weather API
+  -Email notifications

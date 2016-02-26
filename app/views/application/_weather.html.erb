@@ -1,0 +1,80 @@
+
+<br>
+<h1 id="event-page-title"> Vote on What day we Ball </h1>
+<h3> Weekend Forcast </h3>
+
+<div id="main-event">
+  <h4>For weekend of</h4>
+    <%= @event.weekend_date %>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div id="saturday-forcast"> 
+        <h3> Saturday Forcast:</h3>
+        <i id="sat-weather-icon-id"></i>
+        <div id="sat-desciption">sat desciption</div>
+        <div id="sat-temp"> temp </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div id="sunday-forcast">
+        <h3> Sunday Forcast:</h3>
+        <i id="sun-weather-icon-id"> </i>
+        <div id="sun-desciption">sun desciption</div>
+        <div id="sun-temp"> temp </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<div id="scoreboard">
+  <div class="row">
+    <div class="col-lg-6">
+      <h3> Saturday Votes:</h3>
+      <div class="vote-count">
+        <%= @event.sat_votes%>
+      </div>
+      <% if current_user.voted == nil %>
+        <%= button_to "sat vote", {:url => update_event_path, :controller => "events", :action => "vote", :event_id => @event.id, :vote_day => "sat", :method => :post}, class: "btn btn-success" %>
+      <% end %>
+  </div>
+  <div class="col-lg-6">
+      <h3> Sunday Votes:</h3>
+        <div class="vote-count">
+          <%= @event.sun_votes %>
+        </div>
+        <!-- copy current user logic from above -->
+      <% if current_user.voted == nil %>
+        <%= button_to "sun vote", {:url => update_event_path, :controller => "events", :action => "vote", :event_id => @event.id, :vote_day => "sun", :method => :post}, class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+  
+<% if flash[:notice] %>
+  <div class="notice"> <%= flash[:notice] %>  </div>
+<%end%>

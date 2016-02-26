@@ -1,0 +1,25 @@
+<h1> Welcome To Hoops Crew! </h1>
+
+<h2> West Oakland's Finest Basketball Meetup </h2>
+<!-- <img class="hoops-logo" src="assets/hoops4.jpg"> -->
+<br>
+<div class="btn-group inline">
+  <% if current_user %>
+    <%= button_to "logout", logout_user_path, method: :delete, class: "btn btn-danger" %>
+  <%else%>
+    <%= button_to "sign up", new_user_path, method: :get, class: "login-btns btn btn-secondary btn-lg sign-up"%>
+    <%= button_to "sign in", sign_in_path, method: :get, class: "login-btns btn btn-secondary btn-lg sign-in" %>
+  <%end%>
+</div>
+
+<br>
+
+<div class=logo>
+   <%= image_tag("logo2.jpg") %>
+
+</div>
+
+<% if flash[:notice] %>
+  <div class="notice"> <%= flash[:notice] %>  </div>
+<%end%>
+
