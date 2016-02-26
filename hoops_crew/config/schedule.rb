@@ -23,7 +23,9 @@
 set :environment, "development"
 set :output, '/Users/kerberus/dev/hoops_crew/hoops_crew/log/cron_log.log'
 every '* * * * *' do
-  rake 'send_email'
+
+  rake 'win:send_email'
+  runner 'User.sanity_check'
   # command "echo 'sanity check 2'"
 end
 

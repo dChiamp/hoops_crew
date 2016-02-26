@@ -22,17 +22,17 @@ module EventsHelper
     # create new Event
 
 
-#   def tally_votes 
-#     if @event.sat_votes > @event.sun_votes
-#       # email
-#       ApplicationMailer.sat_email(@user).deliver
-#     else if @event.sat_votes < @event.sun_votes
-#       #email sunday
-#     end
-#   end
+  # def tally_votes 
+  #   if @event.sat_votes > @event.sun_votes
+  #     # email
+  #     ApplicationMailer.final_date_email(@user).deliver!
+  #   else if @event.sat_votes < @event.sun_votes
+  #     #email sunday
+  #   end
+  # end
 
-#   def p_time
-#     p "hello from EventsHelper"
-#   end
+  def event_check
+    p "hello from EventsHelper"
+  end
   
 end

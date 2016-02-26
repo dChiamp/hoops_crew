@@ -10,11 +10,65 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require weather-icons.min.css
- *= require_self
  *= require_tree .
+ *= require_self
+ *= require weather-icons.min.css
  */
  
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+nav {
+  background-color: #FFC284;
+  width: 100%;
+  font-color: white;
+  text-align: center;
+  font-size: 20px;
+}
+
+.btn {
+  border-right: 5px;
+}
+
+
+.notice {
+  background: lightgreen;
+}
+
+#sat-weather-icon-id {
+  color: lightblue;
+  font-size: 56px;
+}
+
+#sun-weather-icon-id {
+  color: lightblue;
+  font-size: 56px;
+}
+
+/*
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  Set the fixed height of the footer here 
+  height: 60px;
+  background-color: #FFC284;
+  #f5f5f5;
+  z-index: -1;
+}
+*/
+
+footer {
+  background-color: #FFC284;
+
+  bottom:0;
+  left:0;
+  height: 2%;
+  text-align: center;
+
+}
+
+footer p {
+  padding-top: 2%;
+}
 

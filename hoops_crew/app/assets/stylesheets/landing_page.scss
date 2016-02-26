@@ -2,5 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  // background: url('app/assests/images/court.png');
+  text-align: center;  
+
+
+}
+
+
+
+
+.sign-up {
+  background-color: #FFC284;
+}
+
+.sign-up:hover {
+  background-color: lightgreen;
+}
+
+.sign-in {
+  background-color: #FFC284;
+}
+
+.sign-in:hover {
+  background-color: lightgreen;
+}
 
 

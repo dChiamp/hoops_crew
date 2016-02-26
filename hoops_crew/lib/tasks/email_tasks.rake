@@ -7,7 +7,7 @@ namespace :win do
   task send_email: :environment do
     # ... set options if any
     
-    # ApplicationMailer.final_date_email(@user).deliver!
+    # ApplicationMailer.send_final_date_email(@user).deliver_now
     # EventsHelper::p_time
 
     # test

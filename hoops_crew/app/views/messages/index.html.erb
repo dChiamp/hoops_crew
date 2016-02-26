@@ -1,16 +1,25 @@
 <h1>All Messages</h1>
 
-<table id="messages">
-  <tbody>
+<% if flash[:notice] %>
+  <div class="notice"> <%= flash[:notice] %>  </div>
+<%end%>
+<%= button_to 'New message', new_message_path, method: :get, class: "btn btn-success btn-lg" %>
+
+<div id="messages">
     <% @messages.each do |message| %>
-      <tr>
-        <td class="content"><%= message.content %></td>
+      <div class="row">
+        <div class="msg-content col-md-3 col-centered ">
+          Message: <%= message.content %> 
+          <br>
+          From:<%= message.user.name %> 
+        </div>
         <!-- broke ass link -->
-      </tr>
+      </div>
     <% end %>
-  </tbody>
-</table>
+</div>
+
+<!-- link to msg details? -->
 
 <br>
-<%= link_to 'Show', "#{current_user.id}/messages/#{@message.id}" %>
-<%= link_to 'New message', new_message_path %>
+
+<!-- need link to SHOW message details, method_path -->

@@ -81,9 +81,11 @@ class EventsController < ApplicationController
     if params[:vote_day] == "sat"
       @event.update_attribute(:sat_votes, @event.sat_votes + 1)
       @user.update_attribute(:voted, @user.voted = true)
+      flash[:notice] = "Your vote has been cast! NO take-backsies"
     elsif params[:vote_day] == "sun"
       @event.update_attribute(:sun_votes, @event.sun_votes + 1)
       @user.update_attribute(:voted, @user.voted = true)
+      flash[:notice] = "Your vote has been cast! NO take-backsies"
     end
     render :show
     flash[:notice] = "Your vote has been cast! NO take-backsies"

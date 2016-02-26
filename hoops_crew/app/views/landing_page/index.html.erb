@@ -2,22 +2,35 @@
 
 <h2> the bestest most fun and inclusive basketball meetup in Oakland </h2>
 
-<img src="http://i.cdn.turner.com/nba/nba/teamsites/images/legacy/warriors/LogoPrimary_300x329.jpg"> 
+<!-- <img class="hoops-logo" src="assets/hoops4.jpg"> -->
+<%=image_tag("hoop4.jpg")%>
 <br>
 
-<% if current_user %>
-  <%= link_to "logout", "/sessions", method: :delete %>
-<%else%>
-  <%= link_to "sign up", "/users/new" %>
-  <%= link_to "sign in", "/signin" %>
-<%end%>
+<div class="btn-group inline">
+  <% if current_user %>
+    <%= button_to "logout", logout_user_path, method: :delete, class: "btn btn-danger" %>
+  <%else%>
+    <%= button_to "sign up", new_user_path, method: :get, class: "btn btn-secondary btn-lg sign-up"%>
+    <%= button_to "sign in", sign_in_path, method: :get, class: "btn btn-secondary btn-lg sign-in" %>
+  <%end%>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
 
 <% if flash[:notice] %>
   <div class="notice"> <%= flash[:notice] %>  </div>
 <%end%>
 
-<div class="btn-group" role="group" aria-label="...">
-  <button type="button" class="btn btn-default">Left</button>
-  <button type="button" class="btn btn-default">Middle</button>
-  <button type="button" class="btn btn-default">Right</button>
-</div>

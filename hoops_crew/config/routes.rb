@@ -50,7 +50,7 @@ Rails.application.routes.draw do
   #create new msg
   get "/users/:user_id/messages/new", to: "messages#new", as: "new_message"
   # post new msg
-  post "/users/:user_id/messages", to: "messages#create"
+  post "/users/:user_id/messages", to: "messages#create", as: "post_message"
   #show full msg details... might not need this
   get "/users/:user_id/messages/:message_id", to: "messages#show", as: "message"
   #edit msg ... might not need this

@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+
   def new
     @user = User.new
     render :new
@@ -18,8 +19,8 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out
-    flash[:notice] = "You have successfully logged out."
     redirect_to "/"
+    flash[:notice] = "You have successfully logged out."
   end
 
   private 

@@ -38,6 +38,7 @@ $(document).ready(function() {
     $("#sat-weather-icon-id").addClass(satWeatherIdClass);
     $("#sat-desciption").text(satDescription)
     $("#sat-temp").text(satDayTemp + "\xB0")
+    $("#sat-weather-icon-id").addClass("wi wi-owm-" + satWeatherId)
     
     // sun api info
     sunReport.push(response);
@@ -52,6 +53,10 @@ $(document).ready(function() {
     $("#sun-weather-icon-id").addClass(satWeatherIdClass);
     $("#sun-desciption").text(satDescription)
     $("#sun-temp").text(sunDayTemp + "\xB0" )
+    ("#sut-weather-icon-id").addClass("wi wi-owm-" + sutWeatherId)
+
+    console.log(satWeatherId)
+    console.log(sunWeatherId)
   });
   
   // votes. need to render with erb from db

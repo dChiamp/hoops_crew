@@ -11,10 +11,30 @@ Player Profile
 <br>
 
 <% if authorize? %>
-  <%= link_to "Edit user", edit_user_path(@user) %>
-  <%= button_to "Delete user", @user, method: :delete %>
-  <%= link_to "logout", logout_user_path(@user) %>
-  <%= link_to "see all playas", "/users" %>
+  <%= button_to "see all playas", users_path, method: :get, class: "btn btn-secondary btn-sm"%>
+  <%= button_to "Edit user", edit_user_path(@user), method: :get, class: "btn btn-secondary btn-sm" %>
+  <%= button_to "Delete user", @user, method: :delete, class: "btn btn-danger btn-sm" %>
+  <%= button_to "logout", logout_user_path(@user), method: :delete, class: "btn btn-secondary btn-sm" %>
 <%else%>
   <%= link_to "see all playas", "/users" %>
 <% end %>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  before_action :logged_in?, only: :index
   def index
     @messages = Message.all
     render :index
@@ -15,11 +16,12 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.create(message_params)
-    if @message 
+    p "hey from create"
+    @message = current_user.messages.new(message_params)
+    if @message.save
       # login(@user)
+      redirect_to messages_path
       flash[:notice] = "message posted!"
-      redirect_to "/messages"
     else 
       flash[:notice] = "somethings wrong"
       redirect_to "/events"
@@ -51,7 +53,7 @@ class MessagesController < ApplicationController
   private
   def message_params
     #must this be full validation params??
-    params.require(:message).permit(:content, :user_id)
+     params.require(:message).permit(:content, :user_id)
   end
 
 end

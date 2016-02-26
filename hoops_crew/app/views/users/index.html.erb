@@ -6,10 +6,10 @@
 <br>
 <% @users.each do |user| %>
   <div>
-    Name: <%= user.name %>
+    Name:   <%= user.name %>
     origin: <%= user.origin %>
-    'hood: <%= user.neighborhood %>
-    <%= link_to "Show user", user_path(user) %>
+    'hood:  <%= user.neighborhood %>
+    <%= button_to "Show user", user_path(user), method: :get, class: "btn btn-secondary btn-sm" %>
   </div>
   <br>
 <%end%>

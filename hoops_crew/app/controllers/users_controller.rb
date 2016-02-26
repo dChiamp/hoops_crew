@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
+  before_action :logged_in?, only: :index
   #show all users page (from nav)
-  def landing_page
-    render "test"
-  end
+  # def landing_page
+  #   render "test"
+  # end
 
   def index
     @users = User.all
@@ -16,12 +17,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
+    login(@user)
 
     # test mail
     ApplicationMailer.final_date_email(@user).deliver!
 
-    redirect_to "/users/#{@user.id}"
-    # login(@user)
+    # redirect_to "/users/#{@user.id}"
+    redirect_to user_path(@user)
   end
 
   def show
@@ -41,15 +43,20 @@ class UsersController < ApplicationController
   end
 
   def update
+    p "hey from update"
     @user = User.find(params[:user_id])
     # update the user
     @user.update_attributes(user_params)
-    redirect_to "/users/#{@user.id}"
+    # redirect_to "/users/#{@user.id}"
+    redirect_to user_path
   end
 
   def destroy
+    log_out
     User.destroy(params[:user_id])
     redirect_to "/"
+    flash[:notice] = "You have successfully logged out."
+    # redirect_to landing_page
   end
 
   private

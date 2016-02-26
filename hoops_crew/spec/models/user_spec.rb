@@ -13,13 +13,13 @@ RSpec.describe User, type: :model do
     expect(user.name?).to be true
   end
 
-  # it "must be real email" do 
-  #   expect(user.email?).to contain /\A(\S+)@(.+)\.(\S+)\z/
-  # end
+  it "must be real email" do 
+    expect(user.email?).to contain /\A(\S+)@(.+)\.(\S+)\z/
+  end
 
-  # it "must be unique email"
-  #   expect(user.email).to be unique
-  # end
+  it "must be unique email"
+    expect(user.email).to be unique
+  end
 
   let (:correct_user) {User.create({name: "foo", password: "123", email: "d@c.com"}) }
 
@@ -28,5 +28,4 @@ RSpec.describe User, type: :model do
     expect(correct_user.valid?).to be true
   end
 
-  #
 end
