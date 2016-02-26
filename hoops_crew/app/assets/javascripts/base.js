@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  console.log(requestUrl);
+
 
   var satNumInArray;
   var sunNumInArray;
@@ -25,7 +25,6 @@ $(document).ready(function() {
 
   // get correct weekend day from api array
   var dayOfWeek = new Date().getDay(); 
-  console.log(dayOfWeek);
 
   function getWeekendDayNums (dayNum) {
     if (dayNum === 1) {
@@ -59,7 +58,7 @@ $(document).ready(function() {
   var sunReport = [];
   // jquery ajax parse
   $.get(requestUrl, function(response){
-    console.log(response)
+
     // sat api info
     satReport.push(response);
     var satDateString = satReport["0"]["list"][satNumInArray].dt
@@ -80,7 +79,7 @@ $(document).ready(function() {
     sunReport.push(response);
     var sunDateString = sunReport["0"]["list"][sunNumInArray].dt
     var sunDate = new Date(sunDateString * 1000);
-    console.log("day:" + sunDate)
+
     var sunDescription = sunReport["0"]["list"][sunNumInArray]["weather"]["0"].description
     var sunDayTemp = sunReport["0"]["list"][sunNumInArray]["temp"].day;
     var sunWeatherId = sunReport["0"]["list"][sunNumInArray]["weather"]["0"].id
@@ -91,83 +90,13 @@ $(document).ready(function() {
     $("#sun-temp").text(sunDayTemp + "\xB0" )
     $("#sun-weather-icon-id").addClass("wi wi-owm-" + sunWeatherId)
 
-    // console.log(satWeatherId)
-    // console.log(sunWeatherId)
-
     var satDateString0 = satReport["0"]["list"]["1"].dt * 1000;
     var satDateString2 = satReport["0"]["list"]["2"].dt * 1000;
     var satDateString3 = satReport["0"]["list"]["3"].dt * 1000;
     var satDateString4 = satReport["0"]["list"]["4"].dt * 1000;
 
-
-
-
-    var currentLinuxTime = new Date()
-    // var currentDay = currentLinuxTime * 1000
-
-    if (typeof currentLinuxTime == "string") {console.log("its is a string")}
-
-    // console.log(currentLinuxTime).toString();
-
-    // var checkDay = currentLinuxTime.match(/thu/)
-    // console.log(checkDay)
-
-    
-
-
-
-   
-    // naive appraoch
-
-    // var dayNum = []
-    // var saturay = dayNum[0]
-    // var sunday = dayNum[1]
-
-    // var satReportList = satReport["0"]["list"];
-
-    // console.log(satReportList);
-
-    // function getWeekendDayNums(reportList) {
-    //   for (i=0; i < reportList.length; i++) {
-    //     var dayLinuxTime = reportList[i].dt
-    //     var dayString = new Date(dayLinuxTime * 1000)
-    //     console.log(dayString)
-    //     if (dayString.match(/sat/) || dayString.match(/sun/g)) {
-    //       dayNum.push(dayString);
-    //     }
-    //   }
-    // }
-
-    // getWeekendDayNums(satReportList)
-
-
-
-
-
-
-
-
-
   });
   
-  // votes. need to render with erb from db
-  var satVoteCount = 0;
-  var sunVoteCount = 0;
-
-  $satVoteScore =  $("#sat-vote-score")
-  $("#sat-vote-btn").on("click", function(){
-    satVoteCount += 1;
-    console.log(satVoteCount)
-    $satVoteScore.text(satVoteCount);
-  })
-
-  $sunVoteScore =  $("#sun-vote-score")
-  $("#sun-vote-btn").on("click", function(){
-    sunVoteCount += 1;
-    console.log(sunVoteCount)
-    $sunVoteScore.text(sunVoteCount);
-  })
-
 });
 
 
