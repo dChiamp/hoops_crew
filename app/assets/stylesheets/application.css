@@ -11,9 +11,9 @@
  * file per style scope.
  *
  *= require bootstrap
+ *= require weather-icons
  *= require_tree .
  *= require_self
- *= require weather-icons
  */
  
 @import "bootstrap-sprockets";
