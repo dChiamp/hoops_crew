@@ -1,9 +1,4 @@
 module EventsHelper
-  # class Vote_Logic
-  #   attr_accesor: @Vote
-  #   intialize(@vote)
-  #   @vote = vote
-  # end
 
   # doing this with whenever:
     # check time
@@ -21,8 +16,7 @@ module EventsHelper
   # prob do this with whenver too 
     # create new Event
 
-
-  # def tally_votes 
+  # def final
   #   if @event.sat_votes > @event.sun_votes
   #     # email
   #     ApplicationMailer.final_date_email(@user).deliver!
@@ -31,7 +25,7 @@ module EventsHelper
   #   end
   # end
 
-  def event_check
+  def sanity_check
     p "hello from EventsHelper"
   end
   

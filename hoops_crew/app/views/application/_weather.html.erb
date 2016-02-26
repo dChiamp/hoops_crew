@@ -3,7 +3,7 @@
 <h1 id="event-page-title"> Vote on What day we Ball </h1>
 <h3> Weekend Forcast </h3>
 
-<div id="forcasts">
+<div id="main-event">
   <h4>For weekend of</h4>
     <%= @event.weekend_date %>
 
@@ -36,14 +36,18 @@
   <div class="row">
     <div class="col-lg-6">
       <h3> Saturday Votes:</h3>
-      <%= @event.sat_votes %>
+      <div class="vote-count">
+        <%= @event.sat_votes%>
+      </div>
       <% if current_user.voted == nil %>
         <%= button_to "sat vote", {:url => update_event_path, :controller => "events", :action => "vote", :event_id => @event.id, :vote_day => "sat", :method => :post}, class: "btn btn-success" %>
       <% end %>
   </div>
   <div class="col-lg-6">
       <h3> Sunday Votes:</h3>
-        <%= @event.sun_votes %>
+        <div class="vote-count">
+          <%= @event.sun_votes %>
+        </div>
         <!-- copy current user logic from above -->
       <% if current_user.voted == nil %>
         <%= button_to "sun vote", {:url => update_event_path, :controller => "events", :action => "vote", :event_id => @event.id, :vote_day => "sun", :method => :post}, class: "btn btn-success" %>

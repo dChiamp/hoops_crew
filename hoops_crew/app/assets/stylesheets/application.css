@@ -18,6 +18,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+  /*background-color: lightgrey;*/
+}
+
 nav {
   background-color: #FFC284;
   width: 100%;
@@ -27,8 +31,13 @@ nav {
 }
 
 .btn {
-  border-right: 5px;
+  border-radius: 5px;
 }
+
+/*.logo {
+  background-image: url("hoop4.jpg");
+  background-size: cover;
+}*/
 
 
 .notice {
@@ -36,13 +45,19 @@ nav {
 }
 
 #sat-weather-icon-id {
-  color: lightblue;
-  font-size: 56px;
+  color: #FFC284;
+  font-size: 124px;
+  padding: 2%;
 }
 
 #sun-weather-icon-id {
-  color: lightblue;
-  font-size: 56px;
+  color: #FFC284;
+  font-size: 124px;
+  padding: 2%;
+}
+
+.vote-count {
+  font-size: 76px;
 }
 
 /*

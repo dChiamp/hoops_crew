@@ -1,11 +1,8 @@
 <h1> Welcome To Hoops Crew! </h1>
 
-<h2> the bestest most fun and inclusive basketball meetup in Oakland </h2>
-
+<h2> West Oakland's Finest Basketball Meetup </h2>
 <!-- <img class="hoops-logo" src="assets/hoops4.jpg"> -->
-
 <br>
-
 <div class="btn-group inline">
   <% if current_user %>
     <%= button_to "logout", logout_user_path, method: :delete, class: "btn btn-danger" %>
@@ -16,19 +13,11 @@
 </div>
 
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
+<div class=logo>
+   <%= image_tag("logo2.jpg") %>
 
+</div>
 
 <% if flash[:notice] %>
   <div class="notice"> <%= flash[:notice] %>  </div>

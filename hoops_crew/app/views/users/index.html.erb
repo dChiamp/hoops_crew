@@ -4,13 +4,15 @@
 <h3> There are currently <%= @users.length %> players signed up </h3>
 </div>
 <br>
-<% @users.each do |user| %>
-  <div>
-    Name:   <%= user.name %>
-    origin: <%= user.origin %>
-    'hood:  <%= user.neighborhood %>
-    <%= button_to "Show user", user_path(user), method: :get, class: "btn btn-secondary btn-sm" %>
-  </div>
-  <br>
-<%end%>
 
+<div>
+  <% @users.each do |user| %>
+    <div class="player-content col-md-3 col-centered">
+      Name:   <%= user.name %>
+      origin: <%= user.origin %>
+      'hood:  <%= user.neighborhood %>
+      <%= link_to "See Full Payer Profile", user_path(user), method: :get, class: "btn btn-secondary btn-sm" %>
+    </div>
+    <br>
+  <%end%>
+</div>

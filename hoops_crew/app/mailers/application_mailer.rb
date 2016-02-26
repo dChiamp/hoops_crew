@@ -3,9 +3,9 @@ class ApplicationMailer < ActionMailer::Base
   layout 'mailer'
 
   def final_date_email(user)
-    @user = user
+    # @user = user
     # @event = event
-    mail(to: user.email, subject: "hoops crew update")
-    # mail(to: "foo@bar.com", subject: "hoops crew update")
+    # mail(to: user.email, subject: "hoops crew update")
+    mail(to: "foo@bar.com", subject: "hoops crew update")
   end
 end

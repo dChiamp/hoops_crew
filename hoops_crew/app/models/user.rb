@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
   def self.sanity_check
     # event_check
     p "hey from User model!"
+    # ApplicationMailer.final_date_email(self)deliver!
   end
 
   # def send_final_date_email

@@ -1,3 +1,4 @@
+<div class="msgs-background">
 <h1>All Messages</h1>
 
 <% if flash[:notice] %>
@@ -11,11 +12,12 @@
         <div class="msg-content col-md-3 col-centered ">
           Message: <%= message.content %> 
           <br>
-          From:<%= message.user.name %> 
+          From: <%= message.user.name %> 
         </div>
         <!-- broke ass link -->
       </div>
     <% end %>
+</div>
 </div>
 
 <!-- link to msg details? -->
