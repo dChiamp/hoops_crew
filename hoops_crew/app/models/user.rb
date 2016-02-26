@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   end
 
   def self.sanity_check
-    event_check
+    # event_check
     p "hey from User model!"
   end
 
